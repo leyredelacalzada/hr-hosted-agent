@@ -1,0 +1,34 @@
+# Unique identifier/name for this agent
+name: hr-hosted-agent
+# Brief description of what this agent does
+description: >
+  An HR specialist agent for Zava Corporation that answers questions about
+  HR policies, PTO, benefits, and employee handbook using an Azure AI Search
+  knowledge base. Transformed from a standalone Agent Framework agent into a
+  containerized hosted agent for Microsoft Foundry.
+metadata:
+  authors:
+    - Your Name
+  tags:
+    - Azure AI AgentServer
+    - Microsoft Agent Framework
+    - HR
+    - Knowledge Base
+    - Azure AI Search
+template:
+  name: hr-hosted-agent
+  # "hosted" = Foundry-managed infrastructure (HOBO)
+  kind: hosted
+  protocols:
+    - protocol: responses
+  environment_variables:
+    - name: AZURE_AI_PROJECT_ENDPOINT
+      value: ${AZURE_AI_PROJECT_ENDPOINT}
+    - name: AZURE_SEARCH_ENDPOINT
+      value: ${AZURE_SEARCH_ENDPOINT}
+    - name: MODEL_DEPLOYMENT_NAME
+      value: "{{chat}}"
+resources:
+  - kind: model
+    id: gpt-4.1
+    name: chat

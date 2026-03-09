@@ -1,0 +1,6 @@
+azure-ai-agentserver-agentframework==1.0.0b15
+azure-ai-projects==2.0.0b3
+agent-framework-core==1.0.0b260107
+agent-framework-azure-ai==1.0.0b260107
+agent-framework-azure-ai-search==1.0.0b260107
+azure-identity==1.26.0b2
