@@ -6,6 +6,9 @@ Usage:
 """
 
 import os
+from dotenv import load_dotenv
+load_dotenv()
+
 from azure.ai.projects import AIProjectClient
 from azure.ai.projects.models import (
     ImageBasedHostedAgentDefinition,
