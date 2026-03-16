@@ -1,0 +1,32 @@
+name: hr-hosted-agent
+description: >
+  An HR specialist agent for Zava Corporation — Enterprise deployment with
+  Customer-Managed Keys, Managed Identity auth, and Private Endpoints.
+  Same agent logic as Part 1, enterprise-grade infrastructure.
+metadata:
+  authors:
+    - Your Name
+  tags:
+    - Azure AI AgentServer
+    - Microsoft Agent Framework
+    - HR
+    - Enterprise
+    - CMK
+    - Managed Identity
+    - Private Endpoints
+template:
+  name: hr-hosted-agent
+  kind: hosted
+  protocols:
+    - protocol: responses
+  environment_variables:
+    - name: AZURE_AI_PROJECT_ENDPOINT
+      value: ${AZURE_AI_PROJECT_ENDPOINT}
+    - name: AZURE_SEARCH_ENDPOINT
+      value: ${AZURE_SEARCH_ENDPOINT}
+    - name: MODEL_DEPLOYMENT_NAME
+      value: "{{chat}}"
+resources:
+  - kind: model
+    id: gpt-4.1
+    name: chat
